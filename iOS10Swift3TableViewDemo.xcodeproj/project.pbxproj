@@ -13,6 +13,7 @@
 		A5543BF71DB54D8A007D46AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5543BF51DB54D8A007D46AA /* LaunchScreen.storyboard */; };
 		A5543BFF1DB564C6007D46AA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5543BFE1DB564C6007D46AA /* TableViewController.swift */; };
 		A5543C011DB5660F007D46AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5543C001DB5660F007D46AA /* ViewController.swift */; };
+		A5543C231DB57804007D46AA /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5543C221DB57804007D46AA /* Object.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A5543BF81DB54D8A007D46AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5543BFE1DB564C6007D46AA /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		A5543C001DB5660F007D46AA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
+		A5543C221DB57804007D46AA /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				A5543C001DB5660F007D46AA /* ViewController.swift */,
 				A5543BEC1DB54D8A007D46AA /* AppDelegate.swift */,
 				A5543BFE1DB564C6007D46AA /* TableViewController.swift */,
+				A5543C221DB57804007D46AA /* Object.swift */,
 				A5543BF01DB54D8A007D46AA /* Main.storyboard */,
 				A5543BF31DB54D8A007D46AA /* Assets.xcassets */,
 				A5543BF51DB54D8A007D46AA /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			files = (
 				A5543C011DB5660F007D46AA /* ViewController.swift in Sources */,
 				A5543BFF1DB564C6007D46AA /* TableViewController.swift in Sources */,
+				A5543C231DB57804007D46AA /* Object.swift in Sources */,
 				A5543BED1DB54D8A007D46AA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
