@@ -61,6 +61,7 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "demoCell", for: indexPath);
 
         cell.textLabel?.text = data[indexPath.row].Name;
+        cell.detailTextLabel?.text = data[indexPath.row].LastName;
 
         return cell;
     }

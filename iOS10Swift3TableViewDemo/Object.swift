@@ -52,7 +52,7 @@ class Object : NSObject, NSCoding {
         }
     }
     
-    var lastName: String {
+    var LastName: String {
         get {
             return _lastName;
         }
