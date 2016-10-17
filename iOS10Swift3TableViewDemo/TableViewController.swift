@@ -10,6 +10,9 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
+    
+    @IBOutlet weak var myTableView: UITableView!
+    
     var data = ["Banana", "Monkey", "Apple", "Cool."];
     
     override func viewDidLoad() {
@@ -49,12 +52,21 @@ class TableViewController: UITableViewController {
             message: "Enter Object's Name",
             preferredStyle: .alert)
         
+        //Cancel on top of Save due to iOS convention of putting Cancel button on the left
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         let save = UIAlertAction(title: "Save", style: .default) { (alertAction: UIAlertAction) in
             
+            let newObject = alert.textFields?[0].text!;
+            //Should check if this is text
+            
+            self.data.append(newObject!);
+            //Refresh table to show append data
+            self.myTableView.reloadData();
         }
         
+        
+        alert.addTextField(configurationHandler: nil);
         alert.addAction(cancel);
         alert.addAction(save);
         
