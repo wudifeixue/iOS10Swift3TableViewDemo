@@ -13,7 +13,7 @@ class TableViewController: UITableViewController {
     
     @IBOutlet weak var myTableView: UITableView!
     
-    var data = ["Banana", "Monkey", "Apple", "Cool."];
+    var data = [Object]();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,18 @@ class TableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    var filePath: String {
+        let manager = FileManager.default;
+        let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first;
+        return url!.appendingPathComponent("Data").path;
+    }
+    
+    private func saveData(object: Object) {
+        data.append(object);
+        
+        NSKeyedArchiver.archiveRootObject(data, toFile: filePath);
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1;
@@ -41,7 +53,7 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "demoCell", for: indexPath);
 
-        cell.textLabel?.text = data[indexPath.row];
+        cell.textLabel?.text = data[indexPath.row].Name;
 
         return cell;
     }
@@ -57,16 +69,21 @@ class TableViewController: UITableViewController {
         
         let save = UIAlertAction(title: "Save", style: .default) { (alertAction: UIAlertAction) in
             
-            let newObject = alert.textFields?[0].text!;
+            let name = alert.textFields?[0].text!;
+            let lastName = alert.textFields?[1].text!;
+            
+            let newObject = Object(name: name!, lastName: lastName!);
             //Should check if this is text
             
-            self.data.append(newObject!);
+            self.saveData(object: newObject);
             //Refresh table to show append data
             self.myTableView.reloadData();
         }
         
         
         alert.addTextField(configurationHandler: nil);
+        alert.addTextField(configurationHandler: nil);
+        
         alert.addAction(cancel);
         alert.addAction(save);
         
