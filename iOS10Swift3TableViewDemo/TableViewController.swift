@@ -17,6 +17,7 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData();
 
     }
 
@@ -31,6 +32,12 @@ class TableViewController: UITableViewController {
         let manager = FileManager.default;
         let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first;
         return url!.appendingPathComponent("Data").path;
+    }
+    
+    private func loadData() {
+        if let ourData = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? [Object] {
+            data = ourData;
+        }
     }
     
     private func saveData(object: Object) {
