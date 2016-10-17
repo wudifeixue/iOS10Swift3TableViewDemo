@@ -19,7 +19,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    //Stating how many sections are inside the TableView
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1;
+    }
+    
+    //Stating how many rows are inside each section
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10;
+    }
+    
+    //Modifying the cell of the row
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell();
+    }
 
 }
 
