@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var data = ["First", "Second", "Apple", "22", "5th", "Bob", "Seven"];
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +29,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //Stating how many rows are inside each section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10;
+        return data.count;
     }
     
     //Modifying the cell of the row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell();
-        cell.textLabel?.text = "Something Cool";
+        cell.textLabel?.text = data[indexPath.row];
         return cell;
     }
 
