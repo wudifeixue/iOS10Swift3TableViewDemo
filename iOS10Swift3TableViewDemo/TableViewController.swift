@@ -49,7 +49,16 @@ class TableViewController: UITableViewController {
             message: "Enter Object's Name",
             preferredStyle: .alert)
         
-        self.present(alert, animated: true, completion: nil); 
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        let save = UIAlertAction(title: "Save", style: .default) { (alertAction: UIAlertAction) in
+            
+        }
+        
+        alert.addAction(cancel);
+        alert.addAction(save);
+        
+        self.present(alert, animated: true, completion: nil);
     }
 
 }
