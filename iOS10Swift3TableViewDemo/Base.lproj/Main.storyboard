@@ -29,7 +29,13 @@
                             <outlet property="delegate" destination="XF1-qq-kCX" id="zqj-zh-5Xl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Working Table" id="jz7-3l-sSy"/>
+                    <navigationItem key="navigationItem" title="Working Table" id="jz7-3l-sSy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XIQ-PZ-bU0">
+                            <connections>
+                                <action selector="addButton:" destination="XF1-qq-kCX" id="09p-Nm-iR4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I61-Zu-sOP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
