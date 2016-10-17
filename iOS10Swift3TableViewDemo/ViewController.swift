@@ -35,7 +35,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //Modifying the cell of the row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell();
+        let cell = tableView.dequeueReusableCell(withIdentifier: "demoCell", for: indexPath);
         cell.textLabel?.text = data[indexPath.row];
         return cell;
     }
