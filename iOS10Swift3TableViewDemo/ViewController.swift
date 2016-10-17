@@ -32,7 +32,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //Modifying the cell of the row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell();
+        
+        let cell = UITableViewCell();
+        cell.textLabel?.text = "Something Cool";
+        return cell;
     }
 
 }
