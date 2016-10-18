@@ -18,6 +18,9 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData();
+        
+        //Add an Build in Edit Button on Navigation Controller Left
+        navigationItem.leftBarButtonItem = editButtonItem;
 
     }
 
@@ -66,6 +69,23 @@ class TableViewController: UITableViewController {
         return cell;
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true;
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            
+            data.remove(at: indexPath.row);
+            NSKeyedArchiver.archiveRootObject(data, toFile: filePath);
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    
+    
+    //MARK: - Actions
     @IBAction func addButton(_ sender: AnyObject) {
         let alert = UIAlertController(
             title: "Add New Object",
