@@ -88,7 +88,10 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "EditSegue", sender: nil);
+        
+        let index = tableView.indexPathForSelectedRow!.row;
+        
+        performSegue(withIdentifier: "EditSegue", sender: index);
     }
     
     
@@ -130,7 +133,12 @@ class TableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let destination = segue.destination as? EditDataViewController {
-            destination.name = data[myTableView.indexPathForSelectedRow!.row].Name;
+            
+            if let index = sender as? Int {
+                destination.name = data[index].Name;
+            }
+                
+            //destination.name = data[myTableView.indexPathForSelectedRow!.row].Name;
         }
     }
     
