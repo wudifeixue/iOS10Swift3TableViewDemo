@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Working Table-->
+        <!--Notes-->
         <scene sceneID="hKa-RC-MQ2">
             <objects>
                 <tableViewController id="XF1-qq-kCX" customClass="TableViewController" customModule="iOS10Swift3TableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,7 +56,7 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Working Table" id="jz7-3l-sSy"/>
+                    <navigationItem key="navigationItem" title="Notes" id="jz7-3l-sSy"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="myTableView" destination="AIC-RQ-OOu" id="qzX-zt-2KX"/>
@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="3949.5999999999999" y="-316.19190404797604"/>
         </scene>
-        <!--Edit Note-->
+        <!--Edit-->
         <scene sceneID="tsW-Yd-vPW">
             <objects>
-                <viewController id="036-qS-V2G" sceneMemberID="viewController">
+                <viewController id="036-qS-V2G" customClass="EditDataViewController" customModule="iOS10Swift3TableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hDU-rB-J1J"/>
                         <viewControllerLayoutGuide type="bottom" id="rdF-Rr-95m"/>
@@ -79,7 +79,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit Note" id="aLA-oe-DAf">
+                    <navigationItem key="navigationItem" title="Edit" id="aLA-oe-DAf">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="UCf-V4-qFY"/>
                     </navigationItem>
                 </viewController>

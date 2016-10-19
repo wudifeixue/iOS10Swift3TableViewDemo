@@ -121,5 +121,15 @@ class TableViewController: UITableViewController {
         
         self.present(alert, animated: true, completion: nil);
     }
+    
+    //MARK: Segues
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditSegue" {
+            
+            if let destination = segue.destination as? EditDataViewController {
+                destination.name = data[myTableView.indexPathForSelectedRow!.row].Name;
+            }
+        }
+    }
 
 }
