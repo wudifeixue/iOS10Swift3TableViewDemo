@@ -19,18 +19,18 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xlN-UG-tu2" id="DIV-yB-gd6">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yCo-8B-jaQ">
-                                            <frame key="frameInset" minX="15" minY="5" width="33.5" height="20.5"/>
+                                            <frame key="frameInset" minX="15" minY="4" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nwk-0o-qbR">
-                                            <frame key="frameInset" minX="15" minY="25.5" width="44" height="14.5"/>
+                                            <frame key="frameInset" minX="15" minY="25" width="44" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -38,6 +38,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="036-qS-V2G" kind="show" identifier="EditSegue" id="G08-ic-70M"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -45,18 +48,16 @@
                             <outlet property="delegate" destination="XF1-qq-kCX" id="zqj-zh-5Xl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Working Table" id="jz7-3l-sSy">
-                        <barButtonItem key="leftBarButtonItem" title="Detail" id="eho-hK-CC8">
-                            <connections>
-                                <segue destination="036-qS-V2G" kind="show" identifier="detailButtonSegue" id="Hqk-JP-s6A"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XIQ-PZ-bU0">
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="UDv-3T-6eq"/>
+                        <barButtonItem systemItem="add" id="XIQ-PZ-bU0">
                             <connections>
                                 <action selector="addButton:" destination="XF1-qq-kCX" id="09p-Nm-iR4"/>
                             </connections>
                         </barButtonItem>
-                    </navigationItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Working Table" id="jz7-3l-sSy"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="myTableView" destination="AIC-RQ-OOu" id="qzX-zt-2KX"/>
                     </connections>
@@ -65,7 +66,7 @@
             </objects>
             <point key="canvasLocation" x="3949.5999999999999" y="-316.19190404797604"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Note-->
         <scene sceneID="tsW-Yd-vPW">
             <objects>
                 <viewController id="036-qS-V2G" sceneMemberID="viewController">
@@ -78,21 +79,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Edit Note" id="aLA-oe-DAf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="UCf-V4-qFY"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOO-or-EO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4751.1999999999998" y="-316.19190404797604"/>
+            <point key="canvasLocation" x="4729" y="-316"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OWV-Es-x8z">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EHP-Ty-Huf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="EHP-Ty-Huf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="d39-hP-yhq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dk9-qw-6x2">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="XF1-qq-kCX" kind="relationship" relationship="rootViewController" id="zh4-yC-wzL"/>
                     </connections>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A502C7E21DB7CD6F00E83F73 /* EditDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A502C7E11DB7CD6F00E83F73 /* EditDataViewController.swift */; };
 		A5543BED1DB54D8A007D46AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5543BEC1DB54D8A007D46AA /* AppDelegate.swift */; };
 		A5543BF21DB54D8A007D46AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5543BF01DB54D8A007D46AA /* Main.storyboard */; };
 		A5543BF41DB54D8A007D46AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5543BF31DB54D8A007D46AA /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A502C7E11DB7CD6F00E83F73 /* EditDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDataViewController.swift; sourceTree = "<group>"; };
 		A5543BE91DB54D8A007D46AA /* iOS10Swift3TableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS10Swift3TableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5543BEC1DB54D8A007D46AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5543BF11DB54D8A007D46AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				A5543BFE1DB564C6007D46AA /* TableViewController.swift */,
 				A5543C221DB57804007D46AA /* Object.swift */,
 				A5543BF01DB54D8A007D46AA /* Main.storyboard */,
+				A502C7E11DB7CD6F00E83F73 /* EditDataViewController.swift */,
 				A5543BF31DB54D8A007D46AA /* Assets.xcassets */,
 				A5543BF51DB54D8A007D46AA /* LaunchScreen.storyboard */,
 				A5543BF81DB54D8A007D46AA /* Info.plist */,
@@ -144,6 +147,7 @@
 			files = (
 				A5543C011DB5660F007D46AA /* ViewController.swift in Sources */,
 				A5543BFF1DB564C6007D46AA /* TableViewController.swift in Sources */,
+				A502C7E21DB7CD6F00E83F73 /* EditDataViewController.swift in Sources */,
 				A5543C231DB57804007D46AA /* Object.swift in Sources */,
 				A5543BED1DB54D8A007D46AA /* AppDelegate.swift in Sources */,
 			);
@@ -305,6 +309,7 @@
 				A5543BFD1DB54D8A007D46AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -20,7 +20,7 @@ class TableViewController: UITableViewController {
         loadData();
         
         //Add an Build in Edit Button on Navigation Controller Left
-        navigationItem.leftBarButtonItem = editButtonItem;
+        navigationItem.rightBarButtonItem = editButtonItem;
 
     }
 
