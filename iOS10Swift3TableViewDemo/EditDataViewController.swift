@@ -23,9 +23,10 @@ class EditDataViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(_:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         
+        
         nameTextField.text = data[index].Name;
         lastNameTextView.text = data[index].LastName;
-        
+        //checkValidInput();
 
         // Do any additional setup after loading the view.
     }
@@ -51,17 +52,22 @@ class EditDataViewController: UIViewController {
         }
     }
     
-    func checkValidInput(){
-        // Disable the save button if the text field is empty.
-        let text = nameTextField.text ?? ""
-        saveButton.isEnabled = !text.isEmpty;
-    }
+//    func checkValidInput(){
+//        // Disable the save button if the text field is empty.
+//        let text = nameTextField.text ?? "";
+//        saveButton.isEnabled = !text.isEmpty;
+//    }
     
     @IBAction func saveDetail(_ sender: AnyObject) {
-        
-        data[index].Name = nameTextField.text!;
-        data[index].LastName = lastNameTextView.text!;
-        
+        if nameTextField.text != "" && lastNameTextView.text != "" {
+            data[index].Name = nameTextField.text!;
+            data[index].LastName = lastNameTextView.text!;
+            
+            NSKeyedArchiver.archiveRootObject(data, toFile: path);
+            
+            
+            //dismiss(animated: true, completion: nil);
+        }
     }
     
 }

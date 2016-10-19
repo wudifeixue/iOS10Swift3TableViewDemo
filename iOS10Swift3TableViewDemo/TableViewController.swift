@@ -17,11 +17,19 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 60.0
+        tableView.rowHeight = UITableViewAutomaticDimension;
         loadData();
         
         //Add an Build in Edit Button on Navigation Controller Left
         navigationItem.rightBarButtonItem = editButtonItem;
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //Refresh and load data after detail has saved it
+        loadData();
+        myTableView.reloadData();
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,10 +69,13 @@ class TableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "demoCell", for: indexPath);
+        let cell = tableView.dequeueReusableCell(withIdentifier: "demoCell", for: indexPath) as! NotesTableViewCell;
         
-        cell.textLabel?.text = data[indexPath.row].Name;
-        cell.detailTextLabel?.text = data[indexPath.row].LastName;
+//        cell.notesTitle.layer.shadowColor = UIColor.black.cgColor;
+//        cell.notesTitle.layer.shadowOffset = CGSize(width: 0, height: 0);
+//        cell.notesTitle.layer.shadowRadius = 6;
+        cell.notesTitle?.text = data[indexPath.row].Name;
+        cell.notesSubtitle?.text = data[indexPath.row].LastName;
         
         //One of the cool way to display two lines even though it says you can display infinite.
         //cell.detailTextLabel?.numberOfLines = 0;

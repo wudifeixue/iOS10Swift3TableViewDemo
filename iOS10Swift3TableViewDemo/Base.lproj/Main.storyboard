@@ -16,29 +16,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="demoCell" textLabel="yCo-8B-jaQ" detailTextLabel="nwk-0o-qbR" style="IBUITableViewCellStyleSubtitle" id="xlN-UG-tu2">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="demoCell" rowHeight="60" id="xlN-UG-tu2" customClass="NotesTableViewCell" customModule="iOS10Swift3TableViewDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xlN-UG-tu2" id="DIV-yB-gd6">
-                                    <frame key="frameInset" width="320" height="43"/>
+                                    <frame key="frameInset" width="320" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yCo-8B-jaQ">
-                                            <frame key="frameInset" minX="15" minY="4" width="34" height="21"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxL-SM-uln">
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nwk-0o-qbR">
-                                            <frame key="frameInset" minX="15" minY="25" width="44" height="15"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jia-rC-Woc">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="QxL-SM-uln" firstAttribute="leading" secondItem="DIV-yB-gd6" secondAttribute="leading" constant="8" id="9BG-BZ-a35"/>
+                                        <constraint firstItem="QxL-SM-uln" firstAttribute="top" secondItem="DIV-yB-gd6" secondAttribute="top" id="IaL-gY-vTu"/>
+                                        <constraint firstAttribute="bottom" secondItem="Jia-rC-Woc" secondAttribute="bottom" id="Jeo-qf-qsB"/>
+                                        <constraint firstAttribute="trailing" secondItem="Jia-rC-Woc" secondAttribute="trailing" constant="8" id="KIt-i1-NQD"/>
+                                        <constraint firstItem="Jia-rC-Woc" firstAttribute="leading" secondItem="DIV-yB-gd6" secondAttribute="leading" constant="8" id="KYm-vA-7xV"/>
+                                        <constraint firstItem="Jia-rC-Woc" firstAttribute="top" secondItem="DIV-yB-gd6" secondAttribute="top" constant="29" id="f97-qs-XaH"/>
+                                        <constraint firstAttribute="trailing" secondItem="QxL-SM-uln" secondAttribute="trailing" constant="8" id="uiw-zO-atI"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="notesSubtitle" destination="Jia-rC-Woc" id="qmN-gg-9mU"/>
+                                    <outlet property="notesTitle" destination="QxL-SM-uln" id="uGP-QV-HbR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -63,7 +72,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I61-Zu-sOP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3949.5999999999999" y="-316.19190404797604"/>
+            <point key="canvasLocation" x="3948.75" y="-316.25"/>
         </scene>
         <!--Edit-->
         <scene sceneID="tsW-Yd-vPW">
