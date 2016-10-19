@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,15 +12,15 @@
             <objects>
                 <tableViewController id="XF1-qq-kCX" customClass="TableViewController" customModule="iOS10Swift3TableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="AIC-RQ-OOu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="demoCell" textLabel="yCo-8B-jaQ" detailTextLabel="nwk-0o-qbR" style="IBUITableViewCellStyleSubtitle" id="xlN-UG-tu2">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xlN-UG-tu2" id="DIV-yB-gd6">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yCo-8B-jaQ">
@@ -73,13 +74,44 @@
                         <viewControllerLayoutGuide type="bottom" id="rdF-Rr-95m"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iV2-6r-xTF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bT1-4z-UDc">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="v9k-ba-yIp">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bT1-4z-UDc" firstAttribute="top" secondItem="hDU-rB-J1J" secondAttribute="bottom" constant="8" id="2p7-35-bPf"/>
+                            <constraint firstItem="rdF-Rr-95m" firstAttribute="top" secondItem="v9k-ba-yIp" secondAttribute="bottom" id="62E-tp-Ju2"/>
+                            <constraint firstItem="bT1-4z-UDc" firstAttribute="leading" secondItem="iV2-6r-xTF" secondAttribute="leadingMargin" constant="50" id="EcD-Jf-GK4"/>
+                            <constraint firstItem="v9k-ba-yIp" firstAttribute="top" secondItem="bT1-4z-UDc" secondAttribute="bottom" constant="8" id="GZV-aQ-oM5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v9k-ba-yIp" secondAttribute="trailing" id="IrI-79-A4F"/>
+                            <constraint firstItem="bT1-4z-UDc" firstAttribute="centerX" secondItem="iV2-6r-xTF" secondAttribute="centerX" id="M4Y-d7-3jH"/>
+                            <constraint firstItem="v9k-ba-yIp" firstAttribute="leading" secondItem="iV2-6r-xTF" secondAttribute="leadingMargin" id="uaa-JK-rAP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bT1-4z-UDc" secondAttribute="trailing" constant="50" id="ub9-IL-ttc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit" id="aLA-oe-DAf">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="UCf-V4-qFY"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="UCf-V4-qFY">
+                            <connections>
+                                <action selector="saveDetail:" destination="036-qS-V2G" id="cDW-2V-ZTk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lastNameTextView" destination="v9k-ba-yIp" id="YNf-m8-ljk"/>
+                        <outlet property="nameTextField" destination="bT1-4z-UDc" id="4s2-dB-iyP"/>
+                        <outlet property="saveButton" destination="UCf-V4-qFY" id="ivm-QN-1UB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOO-or-EO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,7 +128,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dk9-qw-6x2">
-                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>

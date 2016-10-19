@@ -135,7 +135,11 @@ class TableViewController: UITableViewController {
         if let destination = segue.destination as? EditDataViewController {
             
             if let index = sender as? Int {
-                destination.name = data[index].Name;
+                
+                destination.index = index;
+                destination.data = data;
+                destination.path = filePath;
+                
             }
                 
             //destination.name = data[myTableView.indexPathForSelectedRow!.row].Name;

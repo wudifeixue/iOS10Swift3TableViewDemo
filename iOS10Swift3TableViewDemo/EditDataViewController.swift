@@ -10,13 +10,22 @@ import UIKit
 
 class EditDataViewController: UIViewController {
     
-    var name = "";
-    var lastName = "";
-
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var lastNameTextView: UITextView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    var data = [Object]();
+    var path = "";
+    var index = 0;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("The name is \(name)");
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(_:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        
+        nameTextField.text = data[index].Name;
+        lastNameTextView.text = data[index].LastName;
+        
 
         // Do any additional setup after loading the view.
     }
@@ -26,15 +35,33 @@ class EditDataViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func keyboardDidShow(_ notification: Notification) {
+        if let keyboardSize = ((notification as NSNotification).userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+        {
+            self.lastNameTextView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: lastNameTextView.frame.height - keyboardSize.height/2)
+        }
     }
-    */
-
+    
+    func keyboardWillHide(_ notification: Notification) {
+        if let keyboardSize = ((notification as NSNotification).userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.lastNameTextView.isEditable == true{
+                self.lastNameTextView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: lastNameTextView.frame.height + keyboardSize.height/2)
+                self.lastNameTextView.setContentOffset(CGPoint(x:0 , y:0), animated: false)
+            }
+        }
+    }
+    
+    func checkValidInput(){
+        // Disable the save button if the text field is empty.
+        let text = nameTextField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty;
+    }
+    
+    @IBAction func saveDetail(_ sender: AnyObject) {
+        
+        data[index].Name = nameTextField.text!;
+        data[index].LastName = lastNameTextView.text!;
+        
+    }
+    
 }
