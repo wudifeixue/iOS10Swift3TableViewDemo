@@ -38,9 +38,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="036-qS-V2G" kind="show" identifier="EditSegue" id="G08-ic-70M"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -60,6 +57,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="myTableView" destination="AIC-RQ-OOu" id="qzX-zt-2KX"/>
+                        <segue destination="036-qS-V2G" kind="show" identifier="EditSegue" id="awO-b3-nGZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I61-Zu-sOP" userLabel="First Responder" sceneMemberID="firstResponder"/>

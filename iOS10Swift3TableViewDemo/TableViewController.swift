@@ -9,7 +9,7 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-
+    
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -21,16 +21,16 @@ class TableViewController: UITableViewController {
         
         //Add an Build in Edit Button on Navigation Controller Left
         navigationItem.rightBarButtonItem = editButtonItem;
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     var filePath: String {
         let manager = FileManager.default;
         let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first;
@@ -53,16 +53,16 @@ class TableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1;
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return data.count;
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "demoCell", for: indexPath);
-
+        
         cell.textLabel?.text = data[indexPath.row].Name;
         cell.detailTextLabel?.text = data[indexPath.row].LastName;
         
@@ -85,6 +85,10 @@ class TableViewController: UITableViewController {
             NSKeyedArchiver.archiveRootObject(data, toFile: filePath);
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "EditSegue", sender: nil);
     }
     
     
@@ -124,12 +128,11 @@ class TableViewController: UITableViewController {
     
     //MARK: Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "EditSegue" {
-            
-            if let destination = segue.destination as? EditDataViewController {
-                destination.name = data[myTableView.indexPathForSelectedRow!.row].Name;
-            }
+        
+        if let destination = segue.destination as? EditDataViewController {
+            destination.name = data[myTableView.indexPathForSelectedRow!.row].Name;
         }
     }
-
+    
+    
 }
