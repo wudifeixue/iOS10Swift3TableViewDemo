@@ -9,6 +9,9 @@
 import UIKit
 
 class EditDataViewController: UIViewController {
+    
+    var name = "";
+    var lastName = "";
 
     override func viewDidLoad() {
         super.viewDidLoad()

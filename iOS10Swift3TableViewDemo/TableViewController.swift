@@ -65,7 +65,11 @@ class TableViewController: UITableViewController {
 
         cell.textLabel?.text = data[indexPath.row].Name;
         cell.detailTextLabel?.text = data[indexPath.row].LastName;
-
+        
+        //One of the cool way to display two lines even though it says you can display infinite.
+        //cell.detailTextLabel?.numberOfLines = 0;
+        //cell.detailTextLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
+        
         return cell;
     }
     
